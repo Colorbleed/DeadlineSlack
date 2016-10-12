@@ -2,6 +2,7 @@
 
 Post your [Thinkbox Deadline](http://deadline.thinkboxsoftware.com) events to a [Slack](http://www.slack.com) channel
 
+![deadlineslack_message](https://cloud.githubusercontent.com/assets/2439881/19310499/a48ee002-908a-11e6-9f87-aa50854aeae0.jpg)
 
 ## Features
 
@@ -16,6 +17,7 @@ Post your [Thinkbox Deadline](http://deadline.thinkboxsoftware.com) events to a 
 2. Ensure Deadline synchronized the event plug-in: `Tools > Synchronize Scripts and Plugins` 
 3. Configure the settings through `Tools > Configure Event Plugins > DeadlineSlack`
 
+![deadlineslack_configuration](https://cloud.githubusercontent.com/assets/2439881/19310480/908322a8-908a-11e6-97c2-28a6ff9e0c8b.jpg)
 
 ### Dependencies
 
