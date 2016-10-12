@@ -1,0 +1,201 @@
+[State]
+Type=Enum
+Items=Global Enabled;Opt-In;Disabled
+Category=Options
+CategoryOrder=0
+Label=State
+Default=Disabled
+Description=How this event plug-in should respond to events. If Global, all jobs and slaves will trigger the events for this plugin. If Opt-In, jobs and slaves can choose to trigger the events for this plugin. If Disabled, no events are triggered for this plugin.
+
+[SlackAPIKey]
+Type=string
+Label=Slack API key
+Category=Options
+CategoryOrder=0
+Description=The API key to connect to your slack group.
+Default=
+Required=True
+
+[SlackChannel]
+Type=string
+Label=Slack Channel
+Category=Options
+CategoryOrder=0
+Description=The slack #channel to post to.
+Default=#channel
+Required=True
+
+[SlackAsUser]
+Type=boolean
+Label=Post as user
+Category=Options
+CategoryOrder=0
+Description=Whether to post the message as a user (when enabled it requires the user defined by the API key to be in the channel!)
+Required=True
+Default=True
+
+# ON JOB
+[SlackOnJobFinishedMessage]
+Category=Job Callbacks
+CategoryOrder=1
+Type=MultiLineString
+Label=On Job Finished Message
+Description=The unformatted message posted on job finish
+Required=True
+Default=*Submitted*: _{job.JobName}_;```Submitted by: {job.JobUserName};Plug-in: {job.JobPlugin};Priority: {job.JobPriority} (pool: {job.JobPool});Framerange: {job.JobFrames}
+
+[SlackOnJobDeletedMessage]
+Category=Job Callbacks
+CategoryOrder=1
+Type=MultiLineString
+Label=On Job Deleted Message
+Description=The unformatted message posted on job delete
+Required=True
+Default=
+
+[SlackOnJobFailedMessage]
+Category=Job Callbacks
+CategoryOrder=1
+Type=MultiLineString
+Label=On Job Failed Message
+Description=The unformatted message posted on job failure
+Required=True
+Default=
+
+[SlackOnJobPendedMessage]
+Category=Job Callbacks
+CategoryOrder=1
+Type=MultiLineString
+Label=On Job Pended Message
+Description=The unformatted message posted on job pended
+Required=True
+Default=
+
+[SlackOnJobReleasedMessage]
+Category=Job Callbacks
+CategoryOrder=1
+Type=MultiLineString
+Label=On Job Released Message
+Description=The unformatted message posted on job release
+Required=True
+Default=
+
+[SlackOnJobRequeuedMessage]
+Category=Job Callbacks
+CategoryOrder=1
+Type=MultiLineString
+Label=On Job Requeued Message
+Description=The unformatted message posted on job requeue
+Required=True
+Default=
+
+[SlackOnJobResumedMessage]
+Category=Job Callbacks
+CategoryOrder=1
+Type=MultiLineString
+Label=On Job Resumed Message
+Description=The unformatted message posted on job resume
+Required=True
+Default=
+
+[SlackOnJobPurgedMessage]
+Category=Job Callbacks
+CategoryOrder=1
+Type=MultiLineString
+Label=On Job Purged Message
+Description=The unformatted message posted on job purge
+Required=True
+Default=
+
+[SlackOnJobStartedMessage]
+Category=Job Callbacks
+CategoryOrder=1
+Type=MultiLineString
+Label=On Job Started Message
+Description=The unformatted message posted on job start
+Required=True
+Default=
+
+[SlackOnJobSubmittedMessage] 
+Category=Job Callbacks
+CategoryOrder=1
+Type=MultiLineString
+Label=On Job Submitted Message
+Description=The unformatted message posted on job submitted
+Required=True
+Default=
+
+[SlackOnJobSuspendedMessage]
+Category=Job Callbacks
+CategoryOrder=1
+Type=MultiLineString
+Label=On Job Suspended Message
+Description=The unformatted message posted on job suspend
+Required=True
+Default=
+
+# ON JOB ERROR
+[SlackOnJobErrorMessage]
+Category=Job Error Callbacks
+CategoryOrder=2
+Type=MultiLineString
+Label=On Job Error Message
+Description=The unformatted message posted on job error
+Required=True
+Default=*Job Error:* {job.JobName}
+
+# ON SLAVE
+[SlackOnSlaveIdleMessage]
+Category=Slave Callbacks
+CategoryOrder=3
+Type=MultiLineString
+Label=On Slave Idle Message
+Description=The unformatted message posted on slave idle
+Required=True
+Default=
+
+[SlackOnSlaveStalledMessage]
+Category=Slave Callbacks
+CategoryOrder=3
+Type=MultiLineString
+Label=On Slave Stalled Message
+Description=The unformatted message posted on slave stalled
+Required=True
+Default=*Slave Stalled:* {slave}
+
+[SlackOnSlaveStartedMessage]
+Category=Slave Callbacks
+CategoryOrder=3
+Type=MultiLineString
+Label=On Slave Started Message
+Description=The unformatted message posted on slave started
+Required=True
+Default=
+
+[SlackOnSlaveStoppedMessage]
+Category=Slave Callbacks
+CategoryOrder=3
+Type=MultiLineString
+Label=On Slave Stopped Message
+Description=The unformatted message posted on slave stopped
+Required=True
+Default=
+
+# ON SLAVE JOB
+[SlackOnSlaveRenderingMessage]
+Category=Slave Job Callbacks
+CategoryOrder=4
+Type=MultiLineString
+Label=On Slave Rendering Message
+Description=The unformatted message posted on slave start rendering
+Required=True
+Default=
+
+[SlackOnSlaveStartingJobMessage]
+Category=Slave Job Callbacks
+CategoryOrder=4
+Type=MultiLineString
+Label=On Slave Starting Job Message
+Description=The unformatted message posted on slave starting job
+Required=True
+Default=
