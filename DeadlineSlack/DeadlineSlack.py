@@ -1,4 +1,5 @@
 from Deadline.Events import *
+from Deadline.Scripting import RepositoryUtils
 from functools import partial
 
 
@@ -63,7 +64,15 @@ class DeadlineSlackEvent(DeadlineEventListener):
         
         self.registered = []
         
+        config = RepositoryUtils.GetEventPluginConfig("DeadlineSlack")
+        
         for name in self.CALLBACKS:
+        
+            # Skip registering the events that don't need to emit a message
+            config_key = "Slack{0}Message".format(name)
+            message = config.GetConfigEntryWithDefault(config_key, "")
+            if not message:
+                continue
         
             # Connect the callback with the method
             callback = getattr(self, name + "Callback")
